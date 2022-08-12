@@ -16,5 +16,17 @@ function lodePost() {
         .then(jData => console.log(jData));
 }
 function displayData(jData) {
-    console.log(jData);
+    const ul = document.getElementById('user');
+    for (const i of jData) {
+        console.log(i.name);
+        /* if (i.id == 5) {
+            console.log('fuck u Ervin')
+        } */
+        const li = document.createElement('li')
+        li.innerText = `Name: ${i.name}  Email Id: ${i.email}     user Name: ${i.username}`;
+
+        ul.appendChild(li)
+        li.style.color = 'red';
+
+    }
 }
