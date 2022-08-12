@@ -1,22 +1,20 @@
-// java script object notation-JSON
-// JSON 
-const user = { id: 11, name: 'gorib', job: 'actor' };
-const stringified = JSON.stringify(user)
+function lodeData() {
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+        .then(response => response.json())
+        .then(jsonData => console.log(jsonData.userId))
 
-//console.log(user)
-//console.log(stringified); 
-
-const obj = {
-    name: 'Json Store',
-    address: 'Baily Road',
-    product: ['laptop', 'mobile', 'watch'],
-    owner: {
-        name: 'Json',
-        age: 49,
-        profession: 'besnissman'
-    },
-    isExpensive: false
 }
-const makeString = JSON.stringify(obj);
-const makeObj = JSON.parse(makeString);
-console.log(makeObj);
+
+function lodeUser() {
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(x => x.json())
+        .then(jData => displayData(jData));
+}
+function lodePost() {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(res => res.json())
+        .then(jData => console.log(jData));
+}
+function displayData(jData) {
+    console.log(jData);
+}
