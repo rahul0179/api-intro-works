@@ -17,4 +17,6 @@ function displayPost(data) {
     }
 
 }
-lodePost();
+document.getElementById('post-btn').addEventListener('click', function () {
+    lodePost();
+})
